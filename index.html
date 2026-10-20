@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Miro M. Velasco Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Space Grotesk"', 'sans-serif'],
+                    },
+                    colors: {
+                        darkgray: '#2c2c2f', 
+                        darkgrayHeader: '#2c2c2f',
+                        lightaccent: '#e0e0e0',
+                        bordergray: '#5a5a60'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Hide scrollbar for cleaner look, but keep functionality */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #2c2c2f; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #5a5a60; 
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #888; 
+        }
+        
+        /* Smooth transitions */
+        .fade-in {
+            animation: fadeIn 0.4s ease-in-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-darkgray text-lightaccent font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- Fixed Header Area -->
+    <header class="fixed top-0 left-0 w-full bg-darkgrayHeader z-50 border-b border-bordergray shadow-sm">
+        <div class="max-w-[1920px] mx-auto px-4 pt-10 pb-6 flex flex-col items-center">
+            <!-- Title Section -->
+            <h1 class="text-3xl md:text-4xl tracking-[0.2em] uppercase font-light text-white mb-1">Gabriel Miro M. Velasco</h1>
+            <p class="text-xs md:text-sm tracking-[0.3em] text-gray-400 uppercase mb-8">Portfolio</p>
+            
+            <!-- Navigation Buttons (Square Outline) -->
+            <nav class="flex flex-wrap justify-center gap-4 md:gap-6">
+                <!-- Using square, straight-edged buttons -->
+                <button class="nav-btn border-2 border-bordergray px-6 py-2 uppercase text-xs md:text-sm tracking-widest text-gray-300 hover:bg-lightaccent hover:text-darkgray transition-all duration-300 rounded-none focus:outline-none" data-cat="Character">
+                    Character
+                </button>
+                <button class="nav-btn border-2 border-bordergray px-6 py-2 uppercase text-xs md:text-sm tracking-widest text-gray-300 hover:bg-lightaccent hover:text-darkgray transition-all duration-300 rounded-none focus:outline-none" data-cat="Animation">
+                    Animation
+                </button>
+                <button class="nav-btn border-2 border-bordergray px-6 py-2 uppercase text-xs md:text-sm tracking-widest text-gray-300 hover:bg-lightaccent hover:text-darkgray transition-all duration-300 rounded-none focus:outline-none" data-cat="Environment">
+                    Environment
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area (Pushed down to accommodate fixed header) -->
+    <!-- Note: pt-[220px] ensures content starts below the tall header -->
+    <main class="flex-grow pt-[240px] pb-16 px-4 md:px-8 xl:px-12 w-full max-w-[1920px] mx-auto relative">
+        
+        <!-- ================= GALLERY GRID VIEW ================= -->
+        <div id="grid-view" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 fade-in">
+            <!-- Grid items injected by JS -->
+        </div>
+
+        <!-- ================= INDIVIDUAL PROJECT VIEW ================= -->
+        <div id="project-view" class="hidden w-full max-w-full mx-auto fade-in pb-12">
+            
+            <!-- Split Layout -->
+            <div class="flex flex-col lg:flex-row gap-8 xl:gap-12 items-start relative">
+                
+                <!-- Left: Scrollable Media Gallery -->
+                <div id="project-media-container" class="flex-grow w-full flex flex-col gap-6 xl:gap-10">
+                    <!-- Images/Videos injected by JS -->
+                </div>
+
+                <!-- Right: Sticky Sidebar with 3 boxes -->
+                <aside class="w-full lg:w-80 xl:w-96 flex-shrink-0 flex flex-col gap-6 lg:sticky lg:top-[240px]">
+                    <!-- Box 1: Title/Name -->
+                    <div class="bg-[#1e1e1e] border border-bordergray p-6 shadow-lg">
+                        <h2 id="project-title" class="text-xl md:text-2xl tracking-widest uppercase text-white font-light">Project Title</h2>
+                    </div>
+                    
+                    <!-- Box 2: About -->
+                    <div class="bg-[#1e1e1e] border border-bordergray p-6 shadow-lg">
+                        <h3 class="text-xs tracking-[0.2em] text-gray-500 uppercase mb-4">About</h3>
+                        <p id="project-desc" class="text-gray-400 text-sm font-light leading-relaxed">
+                            This is a dedicated scrollable area for this specific piece. You can replace this text with descriptions of your workflow, lore, or project details. As you scroll the images on the left, this panel remains fixed on desktop.
+                        </p>
+                    </div>
+
+                    <!-- Box 3: Software -->
+                    <div class="bg-[#1e1e1e] border border-bordergray p-6 shadow-lg">
+                        <h3 class="text-xs tracking-[0.2em] text-gray-500 uppercase mb-4">Software Used</h3>
+                        <div id="project-software" class="flex flex-wrap gap-3">
+                            <span class="border border-bordergray px-3 py-1.5 text-xs text-gray-300 uppercase tracking-widest">ZBrush</span>
+                            <span class="border border-bordergray px-3 py-1.5 text-xs text-gray-300 uppercase tracking-widest">Maya</span>
+                            <span class="border border-bordergray px-3 py-1.5 text-xs text-gray-300 uppercase tracking-widest">Unreal</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Previous Button -->
+    <button id="prev-btn" class="hidden fixed left-2 sm:left-6 top-1/2 -translate-y-1/2 z-40 bg-darkgray border-2 border-bordergray text-gray-300 p-3 sm:p-4 hover:bg-lightaccent hover:text-darkgray transition-all duration-300 shadow-lg cursor-pointer focus:outline-none group">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" class="group-hover:-translate-x-1 transition-transform"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    
+    <!-- Next Button -->
+    <button id="next-btn" class="hidden fixed right-2 sm:right-6 top-1/2 -translate-y-1/2 z-40 bg-darkgray border-2 border-bordergray text-gray-300 p-3 sm:p-4 hover:bg-lightaccent hover:text-darkgray transition-all duration-300 shadow-lg cursor-pointer focus:outline-none group">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" class="group-hover:translate-x-1 transition-transform"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+
+    <script>
+        const portfolioItems = [
+            { 
+                id: 1, 
+                category: 'Character', 
+                title: 'Ring Bearer', 
+                thumbnail: './images/Male.jpg', 
+                gallery: [                              
+                    './images/Male1.jpg',
+                    './images/Male2.jpg',
+                    './images/Male3.jpg',
+                    './images/Male4.jpg',
+                    './images/Male5.jpg'
+                ],
+                about: 'A local village man who cant handle the power of the ring. Burning his arm the more he uses this malevolent power to take revenge to those who destroyed his village. I modeled this character to practice a basic male character with proper anatomy and rigging.',
+                software: ['Autodesk Maya', 'Krita']
+            },
+            { 
+                id: 2, 
+                category: 'Character', 
+                title: 'Protagonist', 
+                thumbnail: './images/Protagonist.jpg',
+                gallery: [
+                    './images/Protagonist1.jpg',
+                    './images/Protagonist2.jpg',
+                    './images/Protagonist3.jpg',
+                    './images/Protagonist4.jpg',
+                    './images/Protagonist5.jpg'
+                ],
+                about: 'A young artist who is burdened with self-doubt, fear, and procrastination must find a way to realize to let go of all those fears. This character was made to be cartoony, inspired from Mario64 and older nintendo games.',
+                software: ['Autodesk Maya']
+            },
+            { 
+                id: 3, 
+                category: 'Character', 
+                title: 'Canvas Enemy', 
+                thumbnail: './images/Canvas1.jpg',
+                gallery: [
+                    './images/Canvas1.jpg',
+                    './images/Canvas2.jpg',
+                    './images/Canvas3.jpg',
+                ],
+                about: 'The corrupted canvas rampaging canvas kingdom. This enemy model was based on a real life canvas, but I decided to bring it to life using its two legs and spine to give the player a challenge.',
+                software: ['Autodesk Maya']
+            },
+            { 
+                id: 4, 
+                category: 'Character', 
+                title: 'Spray Enemy', 
+                thumbnail: './images/Spray2.jpg',
+                gallery: [
+                    './images/Spray1.jpg',
+                    './images/Spray2.jpg',
+                    './images/Spray3.jpg',
+                ],
+                about: 'The corrupted spray roaming around canvas kingdom. Same with the canvas, the spray uses its "spray" as a hurdle for the player, additionally giving it fists to punch and to show how angry it is shows its corruption',
+                software: ['Autodesk Maya']
+            },
+            { 
+                id: 5, 
+                category: 'Character', 
+                title: 'PaintBucket of Power', 
+                thumbnail: './images/PB2.jpg',
+                gallery: [
+                    './images/PB.jpg',
+                    './images/PB2.jpg',
+                    './images/PB3.jpg',
+                    './images/PB4.jpg'
+                ],
+                about: 'The corrupted spray roaming around canvas kingdom. This paint bucket is filled with paint, and paint is power in this world. This  power acts as a volcano or a a machine gun, it can fire rapid blasts with its 2 canon hands or create a massive paint ball that tackles the player.',
+                software: ['Autodesk Maya']
+            },
+            { 
+                id: 6, 
+                category: 'Environment', 
+                title: 'Space Cantina', 
+                thumbnail: './images/Cantina1.jpg',
+                gallery: [
+                    './images/Cantina1.jpg',
+                    './images/Cantina2.jpg',
+                    './images/Cantina3.jpg',
+                    './images/Cantina4.jpg',
+                    './images/Cantina5.jpg'
+                ],
+                about: 'Inspired by Star Wars this room uses similar technology and designs seen in tattooine. This is a simple isometric room project to practice modeling and texturing',
+                software: ['Autodesk Maya']
+            },
+            { 
+                id: 7, 
+                category: 'Environment', 
+                title: 'Outdoor food', 
+                thumbnail: './images/Pizza1.jpg',
+                gallery: [
+                    './images/Pizza1.jpg',
+                    './images/Pizza2.jpg',
+                    './images/Pizza3.jpg'
+                ],
+                about: 'Simple outdoor modeling of Pizza Boxes, Pizza, Cans, and a table. This was a simple modeling project to practice modeling and texturing.',
+                software: ['Autodesk Maya']
+            },
+            { 
+                id: 8, 
+                category: 'Animation', 
+                title: 'Protagonist Animations', 
+                thumbnail: './images/Protagonist2.jpg',
+                gallery: [
+                    './videos/MCIdle.mp4',
+                    './videos/MCWalk.mp4',     
+                    './videos/MCThink.mp4'      
+                ],
+                about: 'The young artist animations. This features the Idle Animation, Walking Animation, and Thinking Animation.',
+                software: ['Autodesk Maya']
+            },
+            { 
+                id: 9, 
+                category: 'Animation', 
+                title: 'Canvas Animations', 
+                thumbnail: './images/Canvas2.jpg',
+                gallery: [
+                    './videos/CanvasIdle.mp4',   
+                    './videos/CanvasWalk.mp4',     
+                    './videos/CanvasAttack.mp4'      
+                ],
+                about: 'The corrupted canvas rampaging canvas kingdom. This animation features the Idle, Walking, and Attack which is the canvas falling down. This is sort of a reference to the falling walls in mario games.',
+                software: ['Autodesk Maya']
+            },
+            { 
+                id: 10, 
+                category: 'Animation', 
+                title: 'Spray Animations', 
+                thumbnail: './images/Spray3.jpg',
+                gallery: [
+                    './videos/SprayIdle.mp4',     
+                    './videos/SprayWalk.mp4'      
+                ],
+                about: 'The corrupted spray roaming around canvas kingdom. This features the Idle and Walking animation of the spray. I tried to make the animation angry and aggressive to show its corruption.',
+                software: ['Autodesk Maya']
+            },
+            { 
+                id: 11, 
+                category: 'Animation', 
+                title: 'Paint Bucket Animations', 
+                thumbnail: './images/PB4.jpg',
+                gallery: [
+                    './videos/PB1.mp4',     
+                    './videos/PB2.mp4'      
+                ],
+                about: 'The Final Boss of the game showing of its Megablast and Rapid Fire attacks.',
+                software: ['Autodesk Maya']
+            },
+            { 
+                id: 12, 
+                category: 'Environment', 
+                title: 'Canvas Kingdom', 
+                thumbnail: './images/KP1.png',
+                gallery: [
+                    './images/KP1.png',
+                    './images/KP2.png'
+                ],
+                about: 'The village where art lives. This is taken inside of Unity to show my models like the trees, walls, and pencil cases.',
+                software: ['Autodesk Maya', 'Unity']
+            },
+            { 
+                id: 13, 
+                category: 'Environment', 
+                title: 'Corrupted Lake', 
+                thumbnail: './images/LP1.png',
+                gallery: [
+                    './images/LP1.png',
+                    './images/LP2.png'
+                ],
+                about: 'From a land faraway from Canvas Kingdom, shows a forest drowning in corruption. This is taken inside of unity to show the variety of models used in the world of the game. The screenshots used provide the fences, sinking crayons, tree variants, erasers, and etc.',
+                software: ['Autodesk Maya', 'Unity']
+            },
+            { 
+                id: 6, 
+                category: 'Environment', 
+                title: 'Paint Power', 
+                thumbnail: './images/LG2.png',
+                gallery: [
+                    './images/LG1.png',
+                    './images/LG2.png'
+                ],
+                about: 'The land where Paint Bucket of Power resides. The world here is more red and corrupted, trees are discolored or gray to show that the paint is rapidly in corruption and is going away. This stage was made to show intensity and power.',
+                software: ['Autodesk Maya', 'Unity']
+            }
+        ];
+
+        // DOM Elements
+        const gridView = document.getElementById('grid-view');
+        const projectView = document.getElementById('project-view');
+        const projectMediaContainer = document.getElementById('project-media-container');
+        const projectTitle = document.getElementById('project-title');
+        
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const navBtns = document.querySelectorAll('.nav-btn');
+
+        // State Variables
+        let currentFilteredData = [];
+        let currentItemIndex = 0;
+
+        // Render the image grid based on provided data
+        function renderGrid(data) {
+            gridView.innerHTML = ''; // Clear existing
+            
+            if (data.length === 0) {
+                gridView.innerHTML = '<p class="col-span-full text-center text-gray-500 mt-10">No items found for this category.</p>';
+                return;
+            }
+
+            data.forEach((item, index) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'aspect-square bg-[#1e1e1e] border border-bordergray cursor-pointer overflow-hidden group relative';
+                
+                // Image setup with hover scale effect (Now uses item.thumbnail)
+                itemDiv.innerHTML = `
+                    <img src="${item.thumbnail}" alt="${item.title}" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition duration-500">
+                    <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-white text-sm tracking-widest uppercase">${item.title}</span>
+                    </div>
+                `;
+                
+                // Click to open specific project
+                itemDiv.onclick = () => openProject(index);
+                gridView.appendChild(itemDiv);
+            });
+        }
+
+        // Open Individual Project View
+        function openProject(index) {
+            currentItemIndex = index;
+            
+            // Hide Grid, Show Project
+            gridView.classList.add('hidden');
+            projectView.classList.remove('hidden');
+            
+            // Show side controls
+            prevBtn.classList.remove('hidden');
+            nextBtn.classList.remove('hidden');
+            
+            // Update UI with content
+            updateProjectContent();
+            
+            // Scroll to top of the page smoothly
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Close Project View and Return to Grid
+        function closeProject() {
+            projectView.classList.add('hidden');
+            prevBtn.classList.add('hidden');
+            nextBtn.classList.add('hidden');
+            gridView.classList.remove('hidden');
+            
+            // Re-trigger fade-in animation on grid
+            gridView.classList.remove('fade-in');
+            void gridView.offsetWidth; // trigger reflow
+            gridView.classList.add('fade-in');
+        }
+
+        // Update Project Media and Button States
+        function updateProjectContent() {
+            const item = currentFilteredData[currentItemIndex];
+            
+            // Re-trigger animation on the whole project view for smooth transition
+            projectView.classList.remove('fade-in');
+            void projectView.offsetWidth; // trigger reflow
+            projectView.classList.add('fade-in');
+
+            // Set Title
+            projectTitle.textContent = item.title;
+
+            // Set About Description dynamically
+            const projectDesc = document.getElementById('project-desc');
+            projectDesc.textContent = item.about || 'Description coming soon.';
+
+            // Set Software Tags dynamically
+            const projectSoftware = document.getElementById('project-software');
+            projectSoftware.innerHTML = ''; // Clear previous static tags
+            
+            if (item.software && item.software.length > 0) {
+                item.software.forEach(tool => {
+                    projectSoftware.innerHTML += `<span class="border border-bordergray px-3 py-1.5 text-xs text-gray-300 uppercase tracking-widest">${tool}</span>`;
+                });
+            } else {
+                projectSoftware.innerHTML = '<span class="text-xs text-gray-500 italic">No tools specified</span>';
+            }
+
+            // Populate Left Scrollable Media Column
+            projectMediaContainer.innerHTML = ''; // Clear previous
+            
+            // Dynamically generate images and videos from the gallery array
+            if (item.gallery && item.gallery.length > 0) {
+                item.gallery.forEach(mediaPath => {
+                    // Check if the file is a video by its extension
+                    if (mediaPath.toLowerCase().match(/\.(mp4|webm|ogg)$/)) {
+                        projectMediaContainer.innerHTML += `
+                            <video src="${mediaPath}" autoplay loop muted playsinline class="w-full h-auto object-cover block border border-bordergray shadow-xl"></video>
+                        `;
+                    } else {
+                        // Otherwise, render it as a standard image
+                        projectMediaContainer.innerHTML += `
+                            <img src="${mediaPath}" class="w-full h-auto object-cover block border border-bordergray shadow-xl" alt="${item.title}">
+                        `;
+                    }
+                });
+            } else {
+                projectMediaContainer.innerHTML = '<p class="text-gray-500 italic">No media available.</p>';
+            }
+
+            // Handle Previous Button availability
+            if (currentItemIndex === 0) {
+                prevBtn.style.opacity = '0.2';
+                prevBtn.style.pointerEvents = 'none';
+            } else {
+                prevBtn.style.opacity = '1';
+                prevBtn.style.pointerEvents = 'auto';
+            }
+
+            // Handle Next Button availability
+            if (currentItemIndex === currentFilteredData.length - 1) {
+                nextBtn.style.opacity = '0.2';
+                nextBtn.style.pointerEvents = 'none';
+            } else {
+                nextBtn.style.opacity = '1';
+                nextBtn.style.pointerEvents = 'auto';
+            }
+        }
+
+        // Event Listeners for Navigation Buttons
+        prevBtn.addEventListener('click', () => {
+            if (currentItemIndex > 0) openProject(currentItemIndex - 1);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentItemIndex < currentFilteredData.length - 1) openProject(currentItemIndex + 1);
+        });
+
+        // Category Filter Logic
+        navBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Return to grid if currently in project view
+                if (!projectView.classList.contains('hidden')) {
+                    closeProject();
+                }
+
+                // Reset styling on all buttons
+                navBtns.forEach(b => {
+                    b.classList.remove('bg-lightaccent', 'text-darkgray');
+                    b.classList.add('text-gray-300');
+                });
+                
+                // Highlight active button
+                btn.classList.add('bg-lightaccent', 'text-darkgray');
+                btn.classList.remove('text-gray-300');
+
+                // Filter Data
+                const category = btn.getAttribute('data-cat');
+                currentFilteredData = portfolioItems.filter(item => item.category === category);
+                
+                // Render the new grid
+                renderGrid(currentFilteredData);
+            });
+        });
+
+        // Initialize App
+        // Click the first category by default (Character)
+        window.addEventListener('DOMContentLoaded', () => {
+            if (navBtns.length > 0) {
+                navBtns[0].click();
+            }
+        });
+    </script>
+</body>
+</html>
