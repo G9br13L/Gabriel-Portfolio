@@ -535,7 +535,7 @@
 
             // Set About Description dynamically
             const projectDesc = document.getElementById('project-desc');
-            projectDesc.textContent = item.about || 'Description coming soon.';
+            projectDesc.innerHTML = item.about || 'Description coming soon.';
 
             // Set Software Tags dynamically
             const projectSoftware = document.getElementById('project-software');
