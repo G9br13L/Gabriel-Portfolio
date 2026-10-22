@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriel Miro M. Velasco Portfolio</title>
+    <title>Minimalist Portfolio</title>
+    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Space Grotesk Font -->
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <script>
@@ -15,6 +17,7 @@
                         sans: ['"Space Grotesk"', 'sans-serif'],
                     },
                     colors: {
+                        // A slightly lighter dark gray for less eye strain
                         darkgray: '#2c2c2f', 
                         darkgrayHeader: '#2c2c2f',
                         lightaccent: '#e0e0e0',
@@ -55,7 +58,7 @@
     <header class="fixed top-0 left-0 w-full bg-darkgrayHeader z-50 border-b border-bordergray shadow-sm">
         <div class="max-w-[1920px] mx-auto px-4 pt-10 pb-6 flex flex-col items-center">
             <!-- Title Section -->
-            <h1 class="text-3xl md:text-4xl tracking-[0.2em] uppercase font-light text-white mb-1">Gabriel Miro M. Velasco</h1>
+            <h1 class="text-3xl md:text-4xl tracking-[0.2em] uppercase font-light text-white mb-1">Your Name</h1>
             <p class="text-xs md:text-sm tracking-[0.3em] text-gray-400 uppercase mb-8">Portfolio</p>
             
             <!-- Navigation Buttons (Square Outline) -->
@@ -69,6 +72,9 @@
                 </button>
                 <button class="nav-btn border-2 border-bordergray px-6 py-2 uppercase text-xs md:text-sm tracking-widest text-gray-300 hover:bg-lightaccent hover:text-darkgray transition-all duration-300 rounded-none focus:outline-none" data-cat="Environment">
                     Environment
+                </button>
+                <button class="nav-btn border-2 border-bordergray px-6 py-2 uppercase text-xs md:text-sm tracking-widest text-gray-300 hover:bg-lightaccent hover:text-darkgray transition-all duration-300 rounded-none focus:outline-none" data-cat="Technicals">
+                    Technicals
                 </button>
             </nav>
         </div>
@@ -124,6 +130,7 @@
 
     </main>
 
+    <!-- Global Fixed Previous/Next Navigation (Visible only in Project View) -->
     <!-- Previous Button -->
     <button id="prev-btn" class="hidden fixed left-2 sm:left-6 top-1/2 -translate-y-1/2 z-40 bg-darkgray border-2 border-bordergray text-gray-300 p-3 sm:p-4 hover:bg-lightaccent hover:text-darkgray transition-all duration-300 shadow-lg cursor-pointer focus:outline-none group">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" class="group-hover:-translate-x-1 transition-transform"><path d="M15 18l-6-6 6-6"/></svg>
@@ -320,6 +327,21 @@
                 about: 'The land where Paint Bucket of Power resides. The world here is more red and corrupted, trees are discolored or gray to show that the paint is rapidly in corruption and is going away. This stage was made to show intensity and power.',
                 software: ['Autodesk Maya', 'Unity']
             }
+            id: 7, 
+                category: 'Technicals', 
+                title: 'Pause UI in Unity', 
+                thumbnail: './images/Pause1.png',
+                gallery: [
+                    './videos/Pause.mp4',  
+                    './images/Pause1.png',
+                    './images/Pause2.png',
+                    './images/Pause3.png',
+                    './images/Pause4.png',
+                    './images/Pause5.png',
+                    './images/Pause6.png'
+                ],
+                about: 'An animated UI sequence for the pause menu for easier navigation and a lively pause UI',
+                software: ['Unity', 'C#']
         ];
 
         // DOM Elements
