@@ -76,6 +76,9 @@
                 <button class="nav-btn border-2 border-bordergray px-6 py-2 uppercase text-xs md:text-sm tracking-widest text-gray-300 hover:bg-lightaccent hover:text-darkgray transition-all duration-300 rounded-none focus:outline-none" data-cat="Technicals">
                     Development
                 </button>
+                <button class="nav-btn border-2 border-bordergray px-6 py-2 uppercase text-xs md:text-sm tracking-widest text-gray-300 hover:bg-lightaccent hover:text-darkgray transition-all duration-300 rounded-none focus:outline-none" data-cat="Frontend">
+                    Frontend
+                </button>
             </nav>
         </div>
     </header>
@@ -128,6 +131,126 @@
             </div>
         </div>
 
+        <!-- ================= FRONTEND INDIVIDUAL PROJECT VIEW ================= -->
+        <div id="frontend-project-view" class="hidden w-full max-w-[1600px] mx-auto fade-in pb-12">
+            <div class="flex flex-col gap-6 xl:gap-8">
+
+                <!-- Row 1: Full-Width Project Name Bar -->
+                <div class="bg-[#1e1e1e] border border-bordergray px-6 py-5 shadow-lg text-center">
+                    <h2 id="fe-project-title" class="text-xl md:text-2xl tracking-[0.2em] uppercase text-white font-light">Project Name</h2>
+                </div>
+
+                <!-- Row 2: Wireframe vs Final Comparison (2 Equal Columns) -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 xl:gap-8">
+                    <!-- Left: Wireframe -->
+                    <div id="fe-wireframe-container" class="w-full bg-[#18181a] border border-bordergray shadow-xl overflow-hidden flex items-center justify-center">
+                        <!-- Wireframe media injected by JS -->
+                    </div>
+
+                    <!-- Right: Final -->
+                    <div id="fe-final-container" class="w-full bg-[#18181a] border border-bordergray shadow-xl overflow-hidden flex items-center justify-center">
+                        <!-- Final media injected by JS -->
+                    </div>
+                </div>
+
+                <!-- Row 3: Full-Width Overview Text Box -->
+                <div class="bg-[#1e1e1e] border border-bordergray p-6 md:p-8 shadow-lg">
+                    <h3 class="text-xs tracking-[0.25em] text-gray-500 uppercase mb-4">Overview</h3>
+                    <p id="fe-overview" class="text-gray-300 text-sm md:text-base font-light leading-relaxed">
+                        <!-- Overview text injected by JS -->
+                    </p>
+                </div>
+
+                <!-- Row 4: Asymmetric Split (Video Presentation Left + Separate Boxes Right) -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 xl:gap-8 items-stretch">
+                    <!-- Left: Video Presentation (Wider) -->
+                    <div id="fe-video-container" class="lg:col-span-8 w-full bg-[#18181a] border border-bordergray shadow-xl overflow-hidden flex items-center justify-center">
+                        <!-- Video or fallback image injected by JS -->
+                    </div>
+
+                    <!-- Right: Separate Boxes for Implementation and Software Used -->
+                    <div class="lg:col-span-4 flex flex-col gap-6">
+                        <!-- Box 1: Implementation -->
+                        <div class="bg-[#1e1e1e] border border-bordergray p-6 md:p-8 shadow-lg flex-grow">
+                            <h3 class="text-xs tracking-[0.25em] text-gray-500 uppercase mb-4">Implementation</h3>
+                            <p id="fe-video-details" class="text-gray-400 text-sm font-light leading-relaxed">
+                                <!-- Detailed notes injected by JS -->
+                            </p>
+                        </div>
+
+                        <!-- Box 2: Software Used -->
+                        <div class="bg-[#1e1e1e] border border-bordergray p-6 md:p-8 shadow-lg">
+                            <h4 class="text-xs tracking-[0.25em] text-gray-500 uppercase mb-4">Software Used</h4>
+                            <div id="fe-project-software" class="flex flex-wrap gap-3">
+                                <!-- Software tags injected by JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 5 & 6: More Header + 2-Column Gallery -->
+                <div id="fe-more-section" class="flex flex-col gap-6 xl:gap-8">
+                    <div class="bg-[#1e1e1e] border border-bordergray px-6 py-4 shadow-lg text-center">
+                        <h3 class="text-xs md:text-sm tracking-[0.25em] uppercase text-gray-300 font-light">More</h3>
+                    </div>
+
+                    <div id="fe-more-pictures" class="grid grid-cols-1 md:grid-cols-2 gap-6 xl:gap-8">
+                        <!-- Additional final pictures injected by JS -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ================= DEVELOPMENT INDIVIDUAL PROJECT VIEW ================= -->
+        <div id="development-project-view" class="hidden w-full max-w-[1600px] mx-auto fade-in pb-12">
+            <div class="flex flex-col gap-6 xl:gap-8">
+
+                <!-- Row 1: Full-Width Project Name Bar -->
+                <div class="bg-[#1e1e1e] border border-bordergray px-6 py-5 shadow-lg text-center">
+                    <h2 id="dev-project-title" class="text-xl md:text-2xl tracking-[0.2em] uppercase text-white font-light">Project Name</h2>
+                </div>
+
+                <!-- Row 2: Asymmetric Split (Video/Lead Media Left + About & Software Used Right) -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 xl:gap-8 items-stretch">
+                    <!-- Left: Main Presentation Media (Wider) -->
+                    <div id="dev-lead-media" class="lg:col-span-8 w-full bg-[#18181a] border border-bordergray shadow-xl overflow-hidden flex items-center justify-center">
+                        <!-- Lead video or image injected by JS -->
+                    </div>
+
+                    <!-- Right: Separate Boxes for About and Software Used -->
+                    <div class="lg:col-span-4 flex flex-col gap-6">
+                        <!-- Box 1: About -->
+                        <div class="bg-[#1e1e1e] border border-bordergray p-6 md:p-8 shadow-lg flex-grow">
+                            <h3 class="text-xs tracking-[0.25em] text-gray-500 uppercase mb-4">About</h3>
+                            <p id="dev-about" class="text-gray-400 text-sm font-light leading-relaxed">
+                                <!-- About text injected by JS -->
+                            </p>
+                        </div>
+
+                        <!-- Box 2: Software Used -->
+                        <div class="bg-[#1e1e1e] border border-bordergray p-6 md:p-8 shadow-lg">
+                            <h4 class="text-xs tracking-[0.25em] text-gray-500 uppercase mb-4">Software Used</h4>
+                            <div id="dev-project-software" class="flex flex-wrap gap-3">
+                                <!-- Software tags injected by JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 3: Full-Width Middle Text Box (Left Empty for Custom Notes) -->
+                <div class="bg-[#1e1e1e] border border-bordergray p-6 md:p-8 shadow-lg min-h-[160px]">
+                    <p id="dev-details" class="text-gray-300 text-sm md:text-base font-light leading-relaxed"></p>
+                </div>
+
+                <!-- Row 4: Dynamic 2-Column Media Gallery (Any Amount of Remaining Images/Videos) -->
+                <div id="dev-more-media" class="grid grid-cols-1 md:grid-cols-2 gap-6 xl:gap-8">
+                    <!-- Remaining images/videos injected by JS -->
+                </div>
+
+            </div>
+        </div>
+
     </main>
 
     <!-- Global Fixed Previous/Next Navigation (Visible only in Project View) -->
@@ -143,6 +266,7 @@
 
     <script>
         const portfolioItems = [
+            // ================= CHARACTER (1 - 7) =================
             { 
                 id: 1, 
                 category: 'Character', 
@@ -215,32 +339,33 @@
             },
             { 
                 id: 6, 
-                category: 'Environment', 
-                title: 'Space Cantina', 
-                thumbnail: './images/Cantina1.jpg',
+                category: 'Character', 
+                title: 'Blobert', 
+                thumbnail: './images/Blobert1.jpg',
                 gallery: [
-                    './images/Cantina1.jpg',
-                    './images/Cantina2.jpg',
-                    './images/Cantina3.jpg',
-                    './images/Cantina4.jpg',
-                    './images/Cantina5.jpg'
+                    './images/Blobert1.jpg',
+                    './images/Blobert2.jpg'
                 ],
-                about: 'Inspired by Star Wars this room uses similar technology and designs seen in tattooine. This is a simple isometric room project to practice modeling and texturing',
+                about: 'Blobert is a friendly NPC that helps the tutorial learn the basics of the game! He represents a small drop of paint or a floating bubble!<br><br>*note: I did not Texture this character I only modeled the character',
                 software: ['Autodesk Maya']
             },
             { 
                 id: 7, 
-                category: 'Environment', 
-                title: 'Outdoor food', 
-                thumbnail: './images/Pizza1.jpg',
+                category: 'Character', 
+                title: 'Pencil of Fear', 
+                thumbnail: './images/pen1.jpg',
                 gallery: [
-                    './images/Pizza1.jpg',
-                    './images/Pizza2.jpg',
-                    './images/Pizza3.jpg'
+                    './images/pen1.jpg',
+                    './images/pen2.jpg',
+                    './images/pen3.jpg',
+                    './images/pen4.jpg',
+                    './images/pen5.jpg'
                 ],
-                about: 'Simple outdoor modeling of Pizza Boxes, Pizza, Cans, and a table. This was a simple modeling project to practice modeling and texturing.',
+                about: 'One of the bosses of the game, modeled after a pencil, I took creative liberties with the eraser head to make it shaped like a crown to show that it is a boss.<br><br>*note: I did not Texture this character I only modeled the character',
                 software: ['Autodesk Maya']
             },
+
+            // ================= ANIMATION (8 - 15) =================
             { 
                 id: 8, 
                 category: 'Animation', 
@@ -293,6 +418,86 @@
             },
             { 
                 id: 12, 
+                category: 'Animation', 
+                title: 'Blobert Animations', 
+                thumbnail: './images/Blobert1.jpg',
+                gallery: [
+                    './videos/BlobertIdle.mp4',     
+                    './videos/BlobertScared.mp4',
+                    './videos/BlobertHappy.mp4',     
+                    './videos/BlobertSpin.mp4'
+                ],
+                about: 'The challenge for Blobert is how can I portray emotions of happiness, scared, his character, and personality with a simple sphere. Seen in the animations are the ways I successfully portrayed all of those emotions!',
+                software: ['Autodesk Maya']
+            },
+            { 
+                id: 13, 
+                category: 'Animation', 
+                title: 'Humpty Dumpty Test', 
+                thumbnail: './images/Humpty.png',
+                gallery: [   
+                    './videos/Humpty Test.mp4'      
+                ],
+                about: 'Practicing camera movements, simple facial rigging, animation, and modeling of Humpty Dumpty.',
+                software: ['Autodesk Maya']
+            },
+            { 
+                id: 14, 
+                category: 'Animation', 
+                title: 'Ping Pong Test', 
+                thumbnail: './images/Ping.png',
+                gallery: [   
+                    './videos/Ping.mp4'      
+                ],
+                about: 'Practicing camera movements, animation, and modeling of Environmental Materials like ping pong.',
+                software: ['Autodesk Maya']
+            },
+            { 
+                id: 15, 
+                category: 'Animation', 
+                title: 'Pencil of Fear', 
+                thumbnail: './images/pen3.jpg',
+                gallery: [
+                    './videos/pen1.mp4',
+                    './videos/pen2.mp4',
+                    './videos/pen3.mp4',
+                    './videos/pen4.mp4'
+                ],
+                about: 'One of the bosses of the game, modeled after a pencil, I took creative liberties with the eraser head to make it shaped like a crown to show that it is a boss.<br><br>*note: I did not Texture this character I only modeled the character',
+                software: ['Autodesk Maya']
+            },
+
+            // ================= ENVIRONMENT (16 - 23) =================
+            { 
+                id: 16, 
+                category: 'Environment', 
+                title: 'Space Cantina', 
+                thumbnail: './images/Cantina1.jpg',
+                gallery: [
+                    './images/Cantina1.jpg',
+                    './images/Cantina2.jpg',
+                    './images/Cantina3.jpg',
+                    './images/Cantina4.jpg',
+                    './images/Cantina5.jpg'
+                ],
+                about: 'Inspired by Star Wars this room uses similar technology and designs seen in tattooine. This is a simple isometric room project to practice modeling and texturing',
+                software: ['Autodesk Maya']
+            },
+            { 
+                id: 17, 
+                category: 'Environment', 
+                title: 'Outdoor food', 
+                thumbnail: './images/Pizza1.jpg',
+                gallery: [
+                    './images/Pizza1.jpg',
+                    './images/Pizza2.jpg',
+                    './images/Pizza3.jpg'
+                ],
+                about: 'Simple outdoor modeling of Pizza Boxes, Pizza, Cans, and a table. This was a simple modeling project to practice modeling and texturing.',
+                software: ['Autodesk Maya']
+            },
+            { 
+                id: 18, 
                 category: 'Environment', 
                 title: 'Canvas Kingdom', 
                 thumbnail: './images/KP1.png',
@@ -305,7 +510,7 @@
                 software: ['Autodesk Maya', 'Unity']
             },
             { 
-                id: 13, 
+                id: 19, 
                 category: 'Environment', 
                 title: 'Corrupted Lake', 
                 thumbnail: './images/LP1.png',
@@ -318,7 +523,7 @@
                 software: ['Autodesk Maya', 'Unity']
             },
             { 
-                id: 14, 
+                id: 20, 
                 category: 'Environment', 
                 title: 'Paint Power', 
                 thumbnail: './images/LG2.png',
@@ -331,8 +536,46 @@
                 about: 'The land where Paint Bucket of Power resides. The world here is more red and corrupted, trees are discolored or gray to show that the paint is rapidly in corruption and is going away. This stage was made to show intensity and power.',
                 software: ['Autodesk Maya', 'Unity']
             },
+            { 
+                id: 21, 
+                category: 'Environment', 
+                title: 'Bonsai', 
+                thumbnail: './images/Bon1.jpg',
+                gallery: [
+                    './images/Bon1.jpg',
+                    './images/Bon2.jpg',
+                    './images/Bon3.jpg'
+                ],
+                about: 'Practice model for texturing Leaves and modeling a Miniature tree. ',
+                software: ['Autodesk Maya', 'Photoshop']
+            },
+            { 
+                id: 22, 
+                category: 'Environment', 
+                title: 'Boxes and Barrels', 
+                thumbnail: './images/Boxes.jpg',
+                gallery: [
+                    './images/Boxes.jpg'
+                ],
+                about: 'Practice in modeling and texturing environments such as boxes and barrels.',
+                software: ['Autodesk Maya', 'Photoshop']
+            },
+            { 
+                id: 23, 
+                category: 'Environment', 
+                title: 'Simple Table', 
+                thumbnail: './images/Table.jpg',
+                gallery: [
+                    './images/Table.jpg',
+                    './images/Table2.jpg'
+                ],
+                about: 'Practice in modeling environments such as glass, tables, and plates.',
+                software: ['Autodesk Maya']
+            },
+
+            // ================= DEVELOPMENT / TECHNICALS (24 - 32) =================
             {
-                id: 15, 
+                id: 24, 
                 category: 'Technicals', 
                 title: 'Animated Lively Pause UI', 
                 thumbnail: './images/PauseThumb.png',
@@ -346,10 +589,11 @@
                     './images/Pause6.png'
                 ],
                 about: 'An animated UI sequence for the pause menu for easier navigation and a lively pause UI. This is an entire working pause system I made that pauses the game, invites the player to look at the map, informs the player through the journal, and allows the player to save the game or check their settings.<br><br>*note: I did not draw the texture for this I only conceptualized a wireframe and sent it to the artist of our team, whom sent me their drawn textures. I placed, coded, and set those textures in unity to make the Pause system of the game work and I gave it animations to ultimately create a lively UI',
+                details: '',
                 software: ['Unity', 'C#']
             },
             {
-                id: 16, 
+                id: 25, 
                 category: 'Technicals', 
                 title: 'Saving Game', 
                 thumbnail: './images/Save.png',
@@ -357,10 +601,11 @@
                     './videos/Save.mp4'
                 ],
                 about: 'A saving system inspired from old PS1 games like FF7 where they have to interact with an object and open the pause menu where the Saving UI is located. This saving function uses save managers, save datas, save ids in unity to seamlessly and easily save the game efficiently.<br><br>*note: Textures not drawn by me, I only placed, animated, and coded the textures I received. I also made a wireframe as a reference for our artist.',
+                details: '',
                 software: ['Unity', 'C#', 'Json']
             },
             {
-                id: 17, 
+                id: 26, 
                 category: 'Technicals', 
                 title: 'NPC Animation and Interaction', 
                 thumbnail: './images/NPC5.png',
@@ -373,10 +618,11 @@
                     './images/NPC5.png',
                 ],
                 about: 'NPC Animations, Interaction Code, and UI placements were all coded and set by me. NPC Dialogue boxes were directly inspired from the Persona games.<br><br>*note: Textures not drawn by me, I only placed, animated, and coded the textures I received. I also made a wireframe as a reference for our artist.',
+                details: '',
                 software: ['Unity', 'C#']
             },
             {
-                id: 18, 
+                id: 27, 
                 category: 'Technicals', 
                 title: 'Minigames', 
                 thumbnail: './images/Minigame5.png',
@@ -391,10 +637,11 @@
                     './images/Minigame6.png'
                 ],
                 about: 'Minigames are the core of this game. I coded these minigames with different variations. First a guessing game where you have to guess the color used, second a color mixing minigame, third a color slider where you have to match the color, fourth another guess the color but this time it requires player input, for the fifth there is a color the canvas minigame where the player can color on a canvas.',
+                details: '',
                 software: ['Unity', 'C#']
             },
             {
-                id: 19, 
+                id: 28, 
                 category: 'Technicals', 
                 title: 'Ingame UI', 
                 thumbnail: './images/UI1.png',
@@ -407,36 +654,11 @@
                     './images/UI5.png',
                 ],
                 about: 'ingame UI were all coded and set by me. They are made to be responsive and easy to use and shows the player all they need to see. Healthbar, minimap, currently equipped colors, and accessible inventory<br><br>*note: Textures not drawn by me, I only placed, animated, and coded the textures I received. I also made a wireframe as a reference for our artist.',
+                details: '',
                 software: ['Unity', 'C#']
             },
             { 
-                id: 20, 
-                category: 'Character', 
-                title: 'Blobert', 
-                thumbnail: './images/Blobert1.jpg',
-                gallery: [
-                    './images/Blobert1.jpg',
-                    './images/Blobert2.jpg'
-                ],
-                about: 'Blobert is a friendly NPC that helps the tutorial learn the basics of the game! He represents a small drop of paint or a floating bubble!<br><br>*note: I did not Texture this character I only modeled the character',
-                software: ['Autodesk Maya']
-            },
-            { 
-                id: 21, 
-                category: 'Animation', 
-                title: 'Blobert Animations', 
-                thumbnail: './images/Blobert1.jpg',
-                gallery: [
-                    './videos/BlobertIdle.mp4',     
-                    './videos/BlobertScared.mp4',
-                    './videos/BlobertHappy.mp4',     
-                    './videos/BlobertSpin.mp4'
-                ],
-                about: 'The challenge for Blobert is how can I portray emotions of happiness, scared, his character, and personality with a simple sphere. Seen in the animations are the ways I successfully portrayed all of those emotions!',
-                software: ['Autodesk Maya']
-            },
-            { 
-                id: 22, 
+                id: 29, 
                 category: 'Technicals', 
                 title: 'AI Navigation Director', 
                 thumbnail: './images/AI.png',
@@ -446,94 +668,8 @@
                     './videos/AI3.mp4'
                 ],
                 about: 'This is an AI Navigation Director that guides the player when they are lost. This uses the Unity Particle Effect system to serve as a visual cue to the player to follow them by circling around them when the player is lost around the map. Working together with the objective manager this AI navigator guides the player to successfully reach the next objective.',
+                details: '',
                 software: ['Unity', 'C#']
-            },
-            { 
-                id: 23, 
-                category: 'Environment', 
-                title: 'Bonsai', 
-                thumbnail: './images/Bon1.jpg',
-                gallery: [
-                    './images/Bon1.jpg',
-                    './images/Bon2.jpg',
-                    './images/Bon3.jpg'
-                ],
-                about: 'Practice model for texturing Leaves and modeling a Miniature tree. ',
-                software: ['Autodesk Maya', 'Photoshop']
-            },
-            { 
-                id: 24, 
-                category: 'Environment', 
-                title: 'Boxes and Barrels', 
-                thumbnail: './images/Boxes.jpg',
-                gallery: [
-                    './images/Boxes.jpg'
-                ],
-                about: 'Practice in modeling and texturing environments such as boxes and barrels.',
-                software: ['Autodesk Maya', 'Photoshop']
-            },
-            { 
-                id: 25, 
-                category: 'Environment', 
-                title: 'Simple Table', 
-                thumbnail: './images/Table.jpg',
-                gallery: [
-                    './images/Table.jpg',
-                    './images/Table2.jpg'
-                ],
-                about: 'Practice in modeling environments such as glass, tables, and plates.',
-                software: ['Autodesk Maya']
-            },
-            { 
-                id: 26, 
-                category: 'Animation', 
-                title: 'Humpty Dumpty Test', 
-                thumbnail: './images/Humpty.png',
-                gallery: [   
-                    './videos/Humpty Test.mp4'      
-                ],
-                about: 'Practicing camera movements, simple facial rigging, animation, and modeling of Humpty Dumpty.',
-                software: ['Autodesk Maya']
-            },
-            { 
-                id: 27, 
-                category: 'Animation', 
-                title: 'Ping Pong Test', 
-                thumbnail: './images/Ping.png',
-                gallery: [   
-                    './videos/Ping.mp4'      
-                ],
-                about: 'Practicing camera movements, animation, and modeling of Environmental Materials like ping pong.',
-                software: ['Autodesk Maya']
-            },
-            { 
-                id: 28, 
-                category: 'Animation', 
-                title: 'Pencil of Fear', 
-                thumbnail: './images/pen3.jpg',
-                gallery: [
-                    './videos/pen1.mp4',
-                    './videos/pen2.mp4',
-                    './videos/pen3.mp4',
-                    './videos/pen4.mp4'
-                ],
-                about: 'One of the bosses of the game, modeled after a pencil, I took creative liberties with the eraser head to make it shaped like a crown to show that it is a boss.<br><br>*note: I did not Texture this character I only modeled the character',
-                software: ['Autodesk Maya']
-            },
-            { 
-                id: 29, 
-                category: 'Character', 
-                title: 'Pencil of Fear', 
-                thumbnail: './images/pen1.jpg',
-                gallery: [
-                    './images/pen1.jpg',
-                    './images/pen2.jpg',
-                    './images/pen3.jpg',
-                    './images/pen4.jpg',
-                    './images/pen5.jpg'
-                ],
-                about: 'One of the bosses of the game, modeled after a pencil, I took creative liberties with the eraser head to make it shaped like a crown to show that it is a boss.<br><br>*note: I did not Texture this character I only modeled the character',
-                software: ['Autodesk Maya']
             },
             {
                 id: 30, 
@@ -547,6 +683,7 @@
                     './videos/Ar4.mp4'
                 ],
                 about: 'When finalizing the game, the team and I wondered what else does the game need? That is when a brilliant idea hit me. I proposed A bonus game mode, this Arena features the brilliantly crafted enemy and boss AI made by my team and bundles them with the player in a massive arena.<br><br> I handled and made the Concept, Points, Streak, Ranking, Tutorial, UI, and Timer to create a competitive single-player experience. Seen in these videos are examples of Bonus Times, a rising bonus point meter, the current held streak, and the timer. I also handled the victory and lose screens which are triggered either by beating the final Arena bosses, or losing in the game/losing time.<br><br>  *note: Enemy AI, Boss AI, Enemy spawning are not made by me but by my amazing team along with the Textures whom not drawn by me, I only placed, animated, and coded the textures I received. I also made a wireframe as a reference for our artist.',
+                details: '',
                 software: ['Unity', 'C#']
             },
             {
@@ -560,6 +697,7 @@
                     './images/leader2.png'
                 ],
                 about: 'Finalizing the brand new game mode the project manager wanted to export these data and upload them into the website to let the players show off their score. We worked together to implement the in-game leaderboard to let it upload the leaderboard data into the exisiting leaderboard website.',
+                details: '',
                 software: ['Unity', 'C#', 'Supabase', 'SQL']
             },
             {
@@ -574,7 +712,26 @@
                     './images/Mobile4.png'
                 ],
                 about: 'This project is all about the basics of mobile games, from making touch screens work as well as, having in-game huds for mobile controls. This space shooter game was the result of learning the mobile game fundamentals and porting from Unity to downloadable APK.<br><br>*Note: This was a simple project made with pre-made unity 3d assets from the asset store.',
+                details: '',
                 software: ['Unity', 'C#', 'Android']
+            },
+
+            // ================= FRONTEND (33) =================
+            {
+                id: 33,
+                category: 'Frontend',
+                title: 'Sample Frontend Project',
+                thumbnail: 'https://placehold.co/800x800/1e1e1e/e0e0e0?text=FRONTEND+PROJECT',
+                wireframe: 'https://placehold.co/1200x750/242427/9ca3af?text=WIREFRAME+MOCKUP',
+                finalMain: 'https://placehold.co/1200x750/1e1e1e/e0e0e0?text=FINAL+INTERFACE',
+                overview: 'Replace this overview with your frontend project story, design goals, layout decisions, and how you translated the initial wireframe into a responsive, interactive production interface.',
+                video: 'https://placehold.co/1280x720/18181a/e0e0e0?text=VIDEO+PRESENTATION+(.MP4+OR+IMAGE)',
+                videoDetails: 'Use this section to break down key frontend features, animations, state management, responsive breakpoints, or API integrations demonstrated in the video presentation.',
+                morePictures: [
+                    'https://placehold.co/1200x750/1e1e1e/e0e0e0?text=FINAL+VIEW+01',
+                    'https://placehold.co/1200x750/1e1e1e/e0e0e0?text=FINAL+VIEW+02'
+                ],
+                software: ['HTML', 'Tailwind CSS', 'JavaScript']
             }
 
         ];
@@ -582,6 +739,8 @@
         // DOM Elements
         const gridView = document.getElementById('grid-view');
         const projectView = document.getElementById('project-view');
+        const frontendProjectView = document.getElementById('frontend-project-view');
+        const developmentProjectView = document.getElementById('development-project-view');
         const projectMediaContainer = document.getElementById('project-media-container');
         const projectTitle = document.getElementById('project-title');
         
@@ -599,7 +758,8 @@
             'Character': 'character',
             'Animation': 'animation',
             'Environment': 'environment',
-            'Technicals': 'development'
+            'Technicals': 'development',
+            'Frontend': 'frontend'
         };
 
         const slugToCategory = {
@@ -607,7 +767,8 @@
             'animation': 'Animation',
             'environment': 'Environment',
             'development': 'Technicals',
-            'technicals': 'Technicals'
+            'technicals': 'Technicals',
+            'frontend': 'Frontend'
         };
 
         // Render the image grid based on provided data
@@ -640,17 +801,30 @@
         // Open Individual Project View
         function openProject(index) {
             currentItemIndex = index;
+            const item = currentFilteredData[currentItemIndex];
             
-            // Hide Grid, Show Project
+            // Hide Grid and all project views first
             gridView.classList.add('hidden');
-            projectView.classList.remove('hidden');
+            projectView.classList.add('hidden');
+            frontendProjectView.classList.add('hidden');
+            developmentProjectView.classList.add('hidden');
             
-            // Show side controls
+            // Show the matching layout for the item's category
+            if (item && item.category === 'Frontend') {
+                frontendProjectView.classList.remove('hidden');
+                updateFrontendProjectContent(item);
+            } else if (item && item.category === 'Technicals') {
+                developmentProjectView.classList.remove('hidden');
+                updateDevelopmentProjectContent(item);
+            } else {
+                projectView.classList.remove('hidden');
+                updateProjectContent();
+            }
+            
+            // Show side controls and update their enabled state
             prevBtn.classList.remove('hidden');
             nextBtn.classList.remove('hidden');
-            
-            // Update UI with content
-            updateProjectContent();
+            updateNavButtonStates();
             
             // Scroll to top of the page smoothly
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -659,6 +833,8 @@
         // Close Project View and Return to Grid
         function closeProject() {
             projectView.classList.add('hidden');
+            frontendProjectView.classList.add('hidden');
+            developmentProjectView.classList.add('hidden');
             prevBtn.classList.add('hidden');
             nextBtn.classList.add('hidden');
             gridView.classList.remove('hidden');
@@ -667,6 +843,144 @@
             gridView.classList.remove('fade-in');
             void gridView.offsetWidth; // trigger reflow
             gridView.classList.add('fade-in');
+        }
+
+        // Update Previous / Next Button States
+        function updateNavButtonStates() {
+            if (currentItemIndex === 0) {
+                prevBtn.style.opacity = '0.2';
+                prevBtn.style.pointerEvents = 'none';
+            } else {
+                prevBtn.style.opacity = '1';
+                prevBtn.style.pointerEvents = 'auto';
+            }
+
+            if (currentItemIndex === currentFilteredData.length - 1) {
+                nextBtn.style.opacity = '0.2';
+                nextBtn.style.pointerEvents = 'none';
+            } else {
+                nextBtn.style.opacity = '1';
+                nextBtn.style.pointerEvents = 'auto';
+            }
+        }
+
+        // Helper to render either a video or an image cleanly
+        function buildMediaElement(mediaPath, altText, isInteractiveVideo = false) {
+            if (!mediaPath) {
+                return '<p class="text-gray-500 text-xs uppercase tracking-widest py-16">No media provided</p>';
+            }
+            if (mediaPath.toLowerCase().match(/\.(mp4|webm|ogg)$/)) {
+                const controlsAttr = isInteractiveVideo ? 'controls' : '';
+                return `<video src="${mediaPath}" ${controlsAttr} autoplay loop muted playsinline class="w-full h-full object-cover block"></video>`;
+            }
+            return `<img src="${mediaPath}" alt="${altText}" class="w-full h-full object-cover block">`;
+        }
+
+        // Populate the custom Frontend Project View (Wireframe Layout)
+        function updateFrontendProjectContent(item) {
+            // Re-trigger fade-in animation
+            frontendProjectView.classList.remove('fade-in');
+            void frontendProjectView.offsetWidth;
+            frontendProjectView.classList.add('fade-in');
+
+            // Row 1: Project Name
+            document.getElementById('fe-project-title').textContent = item.title;
+
+            // Row 2: Wireframe & Final comparison
+            const wireframeContainer = document.getElementById('fe-wireframe-container');
+            const finalContainer = document.getElementById('fe-final-container');
+            wireframeContainer.innerHTML = buildMediaElement(item.wireframe, `${item.title} Wireframe`);
+            finalContainer.innerHTML = buildMediaElement(item.finalMain, `${item.title} Final`);
+
+            // Row 3: Overview text
+            document.getElementById('fe-overview').innerHTML = item.overview || item.about || 'Description coming soon.';
+
+            // Row 4: Video Presentation & Details
+            const videoContainer = document.getElementById('fe-video-container');
+            videoContainer.innerHTML = buildMediaElement(item.video, `${item.title} Video Presentation`, true);
+            document.getElementById('fe-video-details').innerHTML = item.videoDetails || 'Implementation details coming soon.';
+
+            // Tech Stack Tags
+            const feSoftware = document.getElementById('fe-project-software');
+            feSoftware.innerHTML = '';
+            if (item.software && item.software.length > 0) {
+                item.software.forEach(tool => {
+                    feSoftware.innerHTML += `<span class="border border-bordergray px-3 py-1.5 text-xs text-gray-300 uppercase tracking-widest">${tool}</span>`;
+                });
+            } else {
+                feSoftware.innerHTML = '<span class="text-xs text-gray-500 italic">No tools specified</span>';
+            }
+
+            // Row 5 & 6: More Pictures (2-column grid)
+            const moreSection = document.getElementById('fe-more-section');
+            const moreContainer = document.getElementById('fe-more-pictures');
+            moreContainer.innerHTML = '';
+
+            if (item.morePictures && item.morePictures.length > 0) {
+                moreSection.classList.remove('hidden');
+                item.morePictures.forEach((mediaPath, idx) => {
+                    const labelNum = String(idx + 1).padStart(2, '0');
+                    moreContainer.innerHTML += `
+                        <div class="w-full bg-[#18181a] border border-bordergray shadow-xl overflow-hidden">
+                            ${buildMediaElement(mediaPath, `${item.title} ${labelNum}`, true)}
+                        </div>
+                    `;
+                });
+            } else {
+                moreSection.classList.add('hidden');
+            }
+        }
+
+        // Populate the custom Development Project View (Wireframe Layout)
+        function updateDevelopmentProjectContent(item) {
+            // Re-trigger fade-in animation
+            developmentProjectView.classList.remove('fade-in');
+            void developmentProjectView.offsetWidth;
+            developmentProjectView.classList.add('fade-in');
+
+            // Row 1: Project Name
+            document.getElementById('dev-project-title').textContent = item.title;
+
+            // Row 2 Left: Lead Media (First item in gallery — video or image)
+            const leadMediaContainer = document.getElementById('dev-lead-media');
+            const leadMedia = (item.gallery && item.gallery.length > 0) ? item.gallery[0] : null;
+            leadMediaContainer.innerHTML = buildMediaElement(leadMedia, `${item.title} Presentation`, true);
+
+            // Row 2 Right Top: About
+            document.getElementById('dev-about').innerHTML = item.about || '';
+
+            // Row 2 Right Bottom: Software Used
+            const devSoftware = document.getElementById('dev-project-software');
+            devSoftware.innerHTML = '';
+            if (item.software && item.software.length > 0) {
+                item.software.forEach(tool => {
+                    devSoftware.innerHTML += `<span class="border border-bordergray px-3 py-1.5 text-xs text-gray-300 uppercase tracking-widest">${tool}</span>`;
+                });
+            } else {
+                devSoftware.innerHTML = '<span class="text-xs text-gray-500 italic">No tools specified</span>';
+            }
+
+            // Row 3: Middle Text Box (Left empty by default until populated in item.details)
+            document.getElementById('dev-details').innerHTML = item.details || '';
+
+            // Row 4: Remaining Gallery Items (Any amount of images or videos in 2-column grid)
+            const moreMediaContainer = document.getElementById('dev-more-media');
+            moreMediaContainer.innerHTML = '';
+            const remainingMedia = (item.gallery && item.gallery.length > 1) ? item.gallery.slice(1) : [];
+
+            if (remainingMedia.length > 0) {
+                moreMediaContainer.classList.remove('hidden');
+                remainingMedia.forEach((mediaPath, idx) => {
+                    const labelNum = String(idx + 1).padStart(2, '0');
+                    moreMediaContainer.innerHTML += `
+                        <div class="w-full bg-[#18181a] border border-bordergray shadow-xl overflow-hidden flex items-center justify-center">
+                            ${buildMediaElement(mediaPath, `${item.title} ${labelNum}`, true)}
+                        </div>
+                    `;
+                });
+            } else {
+                moreMediaContainer.classList.add('hidden');
+            }
         }
 
         // Update Project Media and Button States
@@ -719,23 +1033,7 @@
                 projectMediaContainer.innerHTML = '<p class="text-gray-500 italic">No media available.</p>';
             }
 
-            // Handle Previous Button availability
-            if (currentItemIndex === 0) {
-                prevBtn.style.opacity = '0.2';
-                prevBtn.style.pointerEvents = 'none';
-            } else {
-                prevBtn.style.opacity = '1';
-                prevBtn.style.pointerEvents = 'auto';
-            }
-
-            // Handle Next Button availability
-            if (currentItemIndex === currentFilteredData.length - 1) {
-                nextBtn.style.opacity = '0.2';
-                nextBtn.style.pointerEvents = 'none';
-            } else {
-                nextBtn.style.opacity = '1';
-                nextBtn.style.pointerEvents = 'auto';
-            }
+            updateNavButtonStates();
         }
 
         // Event Listeners for Navigation Buttons
@@ -749,8 +1047,12 @@
 
         // Category Filter Logic
         function selectCategory(category, updateHash = true) {
-            // Return to grid if currently in project view
-            if (!projectView.classList.contains('hidden')) {
+            // Return to grid if currently in any project view
+            if (
+                !projectView.classList.contains('hidden') ||
+                !frontendProjectView.classList.contains('hidden') ||
+                !developmentProjectView.classList.contains('hidden')
+            ) {
                 closeProject();
             }
 
@@ -794,7 +1096,11 @@
             const matchedCategory = slugToCategory[rawHash] || 'Character';
 
             // Avoid redundant re-renders if already on this category in grid view
-            if (currentCategory === matchedCategory && projectView.classList.contains('hidden')) {
+            const isGridVisible =
+                projectView.classList.contains('hidden') &&
+                frontendProjectView.classList.contains('hidden') &&
+                developmentProjectView.classList.contains('hidden');
+            if (currentCategory === matchedCategory && isGridVisible) {
                 return;
             }
 
