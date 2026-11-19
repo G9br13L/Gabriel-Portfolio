@@ -592,6 +592,23 @@
         // State Variables
         let currentFilteredData = [];
         let currentItemIndex = 0;
+        let currentCategory = null;
+
+        // URL Slug <-> Category Mapping
+        const categoryToSlug = {
+            'Character': 'character',
+            'Animation': 'animation',
+            'Environment': 'environment',
+            'Technicals': 'development'
+        };
+
+        const slugToCategory = {
+            'character': 'Character',
+            'animation': 'Animation',
+            'environment': 'Environment',
+            'development': 'Technicals',
+            'technicals': 'Technicals'
+        };
 
         // Render the image grid based on provided data
         function renderGrid(data) {
@@ -731,38 +748,65 @@
         });
 
         // Category Filter Logic
-        navBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Return to grid if currently in project view
-                if (!projectView.classList.contains('hidden')) {
-                    closeProject();
-                }
+        function selectCategory(category, updateHash = true) {
+            // Return to grid if currently in project view
+            if (!projectView.classList.contains('hidden')) {
+                closeProject();
+            }
 
-                // Reset styling on all buttons
-                navBtns.forEach(b => {
+            currentCategory = category;
+
+            // Reset styling on all buttons and highlight the active one
+            navBtns.forEach(b => {
+                if (b.getAttribute('data-cat') === category) {
+                    b.classList.add('bg-lightaccent', 'text-darkgray');
+                    b.classList.remove('text-gray-300');
+                } else {
                     b.classList.remove('bg-lightaccent', 'text-darkgray');
                     b.classList.add('text-gray-300');
-                });
-                
-                // Highlight active button
-                btn.classList.add('bg-lightaccent', 'text-darkgray');
-                btn.classList.remove('text-gray-300');
+                }
+            });
 
-                // Filter Data
+            // Filter Data and render the new grid
+            currentFilteredData = portfolioItems.filter(item => item.category === category);
+            renderGrid(currentFilteredData);
+
+            // Update URL hash so each tab has a unique, shareable link
+            if (updateHash) {
+                const slug = categoryToSlug[category] || category.toLowerCase();
+                const targetHash = `#${slug}`;
+                if (window.location.hash.toLowerCase() !== targetHash) {
+                    window.location.hash = targetHash;
+                }
+            }
+        }
+
+        navBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
                 const category = btn.getAttribute('data-cat');
-                currentFilteredData = portfolioItems.filter(item => item.category === category);
-                
-                // Render the new grid
-                renderGrid(currentFilteredData);
+                selectCategory(category, true);
             });
         });
 
-        // Initialize App
-        // Click the first category by default (Character)
-        window.addEventListener('DOMContentLoaded', () => {
-            if (navBtns.length > 0) {
-                navBtns[0].click();
+        // Read the current URL hash and open the matching tab
+        function handleRoute() {
+            const rawHash = window.location.hash.replace(/^#\/?/, '').trim().toLowerCase();
+            const matchedCategory = slugToCategory[rawHash] || 'Character';
+
+            // Avoid redundant re-renders if already on this category in grid view
+            if (currentCategory === matchedCategory && projectView.classList.contains('hidden')) {
+                return;
             }
+
+            selectCategory(matchedCategory, false);
+        }
+
+        // Listen for browser Back/Forward navigation or manual hash edits
+        window.addEventListener('hashchange', handleRoute);
+
+        // Initialize App based on the URL hash (defaults to Character if none provided)
+        window.addEventListener('DOMContentLoaded', () => {
+            handleRoute();
         });
     </script>
 </body>
